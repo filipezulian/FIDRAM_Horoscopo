@@ -15,7 +15,10 @@ use App\Http\Controllers\ScrapperController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
+});
+Route::get('/cadastro', function () {
+    return view('auth.cadastro');
 });
 
 Route::controller(ScrapperController::class)->group(function () {
