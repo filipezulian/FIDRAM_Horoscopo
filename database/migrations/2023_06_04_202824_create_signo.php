@@ -13,24 +13,24 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('signo', function (Blueprint $table) {
-            $table->id('id_signo');
+            $table->id();
             $table->string('nome');
             $table->timestamps();
         });
         
         DB::table('signo')->insert([
-            ['nome' => 'Aries'],
-            ['nome' => 'Taurus'],
-            ['nome' => 'Gemini'],
-            ['nome' => 'Cancer'],
-            ['nome' => 'Leo'],
-            ['nome' => 'Virgo'],
+            ['nome' => 'Áries'],
+            ['nome' => 'Touros'],
+            ['nome' => 'Gêmeos'],
+            ['nome' => 'Câncer'],
+            ['nome' => 'Leão'],
+            ['nome' => 'Virgem'],
             ['nome' => 'Libra'],
-            ['nome' => 'Scorpio'],
-            ['nome' => 'Sagittarius'],
-            ['nome' => 'Capricorn'],
-            ['nome' => 'Aquarius'],
-            ['nome' => 'Pisces'],
+            ['nome' => 'Escorpião'],
+            ['nome' => 'Sagitário'],
+            ['nome' => 'Capricórnio'],
+            ['nome' => 'Aquário'],
+            ['nome' => 'Peixes'],
         ]);
 
     }

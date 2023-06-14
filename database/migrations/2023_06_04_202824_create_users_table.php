@@ -15,13 +15,14 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('cpf')->unique()->nullable();
             $table->unsignedBigInteger('id_signo')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->date('nascimento')->nullable();;
             $table->rememberToken();
             $table->timestamps();
-            $table->foreign('id_signo')->references('id_signo')->on('signo');
+            $table->foreign('id_signo')->references('id')->on('signo');
         });
     }
 
