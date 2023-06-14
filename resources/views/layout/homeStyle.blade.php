@@ -19,14 +19,11 @@
 <body>
     <header>
         <div class="nav-bar">
-            <div class="nav-item">
-                <a class="nav-text" href="">Home</a>
+            <div class="nav-item-text">
+                <a class="nav-text" href="">Fidram</a>               
             </div>
-            <div class="nav-item">
-                <a class="nav-text" href="">Horoscopo diário</a>
-            </div>
-            <div class="nav-item">
-                <a class="nav-text" href="">eita papai</a>
+            <div class="nav-item-img">
+                <img src="/img/faceSVG.svg" alt="icone rosto">
             </div>
         </div>
     </header>
