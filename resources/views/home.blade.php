@@ -5,14 +5,6 @@
 @section('content')
 
 <body>
-    <!--
-    <div class="mid-block">
-        <h1>
-            <p> {{$user->id}}</p>
-            <p> {{$paragraphText}}</p>
-        </h1>
-    </div>
--->
     <div class="mid-block">
         <div class="nav-mid-block">
             <nav class="nav-item-mid-block">
@@ -29,6 +21,10 @@
             </nav>
         </div>
         <div class="info-mid-block">
+            <div class="share-line">
+                <div class="data-share-line"><p>{{$data}}</p></div>                
+                <button class="btn-share-line"><img src="/img/share_icon.svg" alt=""></button>
+            </div>
             <div class="ta-info-mid-block">
                 <textarea class="input-dados-dia" style="resize: none" readonly>{{$paragraphText}}</textarea>
                 <div>
@@ -40,9 +36,7 @@
                     <textarea class="input-dados-alimentar" style="resize: none" readonly>Pegar Dados Alimentar</textarea>
                 </div>                
             </div>            
-            <div class="share-line">
-                <button class="btn-share-line"><img src="/img/share_icon.svg" alt=""></button>
-            </div>
+            
         </div>
         
     </div>

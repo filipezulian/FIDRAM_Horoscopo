@@ -26,8 +26,10 @@ class ScrapperController extends Controller
         $html = (string) $response->getBody();
     
         $crawler = new Crawler($html);
-        $paragraphText = $crawler->filter('div.main-horoscope > p')->text();
+        $paragrafoSemData = $crawler->filter('div.main-horoscope > p')->text();        
+        $data = substr($paragrafoSemData, 0, 13);
+        $paragraphText = substr($paragrafoSemData,15);
         
-        return view('home', compact('user', 'paragraphText'));
+        return view('home', compact('user', 'paragraphText', 'data'));
     }
 }

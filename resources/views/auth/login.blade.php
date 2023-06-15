@@ -7,7 +7,7 @@
 <div class="login-mid-block">
     <form method="POST" action="{{ route('login.login') }}">
         @csrf
-        <div>
+        <div class="nav-text-lc">
             <h1>Login</h1>
         </div>
 
