@@ -20,12 +20,14 @@
     <header>
         <div class="nav-bar">
             <div class="nav-item-text">
-                <a class="nav-text" href="">Fidram</a>               
+                <a class="nav-text" href="">Fidram</a>
+                <img src="/img/faceSVG.svg" alt="icone rosto">          
             </div>
-            <div class="nav-item-img">
-                <img src="/img/faceSVG.svg" alt="icone rosto">
+            <div class="nav-item-logout">
+                <button class="btn-nav-logout"><img src="/img/logout.svg" alt="icone logout"></button>
             </div>
         </div>
+        
     </header>
     @yield('content')
 </body>

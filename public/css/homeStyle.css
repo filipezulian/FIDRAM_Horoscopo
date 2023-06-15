@@ -14,6 +14,134 @@ body {
     z-index: -1;
 }
 
+.login-mid-block{
+  display: grid;
+  margin: 4% 19%;
+  background: rgb(135, 154, 192);  
+  width: 80em;
+  height: 45em;    
+  border-radius: 20px;
+}
+
+h1{
+  display: flex;
+  width: 100%;
+  height: 2em;
+  padding-top: 0.3em;
+  border-radius: 20px;
+
+  align-self: center;
+  justify-content: center;
+  font-family: "Comic Sans MS";
+  border-radius: 20px;
+}
+
+.campos-login-top{
+  display: flex;
+  width: 100%;
+  border-radius: 20px;
+  border-top: rgb(77, 96, 156) solid 5px;
+  align-self: center;
+  justify-content: center;
+}
+.campos-login-bottom{
+  display: flex;
+  width: 100%;
+  border-radius: 20px;
+  border-bottom: rgb(77, 96, 156) solid 5px;
+  align-self: center;
+  justify-content: center;
+}
+
+.label-login{
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  height: 3em;
+  margin: 3em 0.5em 1em 0;
+}
+
+label{
+  font-size: 1.7em;  
+  font-family: "Comic Sans MS";
+}
+
+.input-login-email{
+  display: flex;
+  width: 50%;  
+  align-self: center;
+  box-shadow: 2px 2px 2px 2px black;
+  justify-content: center;
+  height: 3em;
+  margin: 1em 0 0 0;
+  border-radius: 20px;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.input-login-email:focus{
+  outline: none;
+}
+
+.input-login-senha:focus{
+  outline: none;
+}
+
+.input-login-senha{
+  display: flex;
+  width: 50%;  
+  align-self: center;
+  box-shadow: 2px 2px 2px 2px black;
+  justify-content: center;
+  height: 3em;
+  margin: 1em 0 0 0;
+  border-radius: 20px;  
+  padding: 10px;
+  font-weight: bold;  
+  font-size: 1.2em;
+}
+
+.btn-login{
+  margin: 2em 1px 3.5em 50em;
+  align-self: center;
+  justify-content: center;
+  height: 5em;
+  width: 10em;
+  border-radius: 20px;
+  border:rgb(77, 96, 156) solid 4px;
+  background: rgb(218, 223, 241);
+  font-family: "Comic Sans MS";
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+.btn-login:hover{
+  margin: 2em 1px 3.5em 50em;
+  align-self: center;
+  justify-content: center;
+  height: 5em;
+  width: 10em;
+  border-radius: 20px;
+  border:rgb(218, 223, 241) solid 4px;
+  background: rgb(77, 96, 156);
+  font-family: "Comic Sans MS";
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+.fonte_cadastro{
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  background: rgb(96, 119, 198);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  font-size: 1.5em;
+  color: #2b2b2b;  
+  font-family: "Comic Sans MS";
+}
+
 .mid-block{
     display: flex;
     margin: 4% 19%;
@@ -146,19 +274,27 @@ header {
 .nav-bar {
     width: 100%;
     height: 10vh;
-    display: flex;
     background-color: rgb(11, 12, 39);
-    justify-content: center;
+    display:flex;
+    justify-content: space-between;
     align-items: center;
 }
 
 .nav-item-text {
-    display: block;
+  margin-left: 8em;
+    flex-grow: 1;
+    width: max-content;
+    display: flex;
+    justify-content: center;
 }
 
-.nav-item-img {
-    justify-content: right;
-    align-items: right;
+.btn-nav-logout{
+  margin-right: 3em;
+  background: rgba(0,0,0,0);
+  border: none;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
 }
 
 .nav-text {

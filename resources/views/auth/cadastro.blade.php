@@ -4,9 +4,10 @@
 
 @section('content')
 
+<div class="login-mid-block">
 <form method="POST" action="{{route('cadastro')}}">
     @csrf
-    <p>Cadastro</p>
+    <h1>Cadastro</h1>
     <div>
         <label for="">Nome:</label>
         <input type="text" name="name" id='name'>
@@ -29,6 +30,9 @@
     </div>
     <button type="submit">Cadastrar</button>
 </form>
-<a href="{{ url('') }}" class="fonte_cadastro">Caso ja tenha uma conta, faça o login aqui</a>
+<a href="{{ url('') }}" class="fonte_cadastro">Caso ja tenha uma conta, faça o login aqui</a>    
+</div>
+
+
 
 @endsection
