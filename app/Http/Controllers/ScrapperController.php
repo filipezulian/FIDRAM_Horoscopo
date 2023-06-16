@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\signo;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -15,8 +16,6 @@ class ScrapperController extends Controller
         $user = Auth::user();
 
         $user_id = Auth()->User()->id_signo;
-
-
 
         $url = 'https://www.horoscope.com/us/horoscopes/general/horoscope-general-daily-today.aspx?sign=' . $user_id; // The URL you want to scrape
         $client = new Client([
@@ -57,7 +56,7 @@ class ScrapperController extends Controller
         return view('tempo.semanal', compact('user', 'paragraphText', 'data'));
     }
 
-    public function scrapperMonth()
+    public function scrapperMonth(Signo $signo)
     {
         $user = Auth::user();
 
@@ -78,22 +77,9 @@ class ScrapperController extends Controller
         //Texto Original, Sem Data, COM 2 Extra
         $paragraphText = substr($paragrafoSemData,12);
 
-        /*
-        //Texto Original, Sem Data, SEM 2 Extra
-        $paragraphText1 = substr($paragraphTextComExtra, 0, strlen($paragraphTextComExtra) - 51); 
-        $paragraphText = $paragraphText1 . "\n\n";
-
-        //Texto Challenging Days
-        $paragraphChallengingDays = substr($paragrafoSemData,-27);
-        //ultimos caracteres
-        $paragraphTextSD = substr($paragraphTextComExtra,  -51);
-        $paragraphStandoutDays1 = substr($paragraphTextSD, 0, strlen($paragraphTextSD) - 27);
-        $paragraphStandoutDays = $paragraphStandoutDays1 . "\n\n";
-        */
-
+        $signoName = Signo::where('id', $user_id)->value('name');
         
-        return view('tempo.mensal', compact('user', 'paragraphText', 'data'));
-    }
+        return view('tempo.mensal', compact('user', 'paragraphText', 'data', 'signo', 'signoName'));
+    }    
 
-    
 }

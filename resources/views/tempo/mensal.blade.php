@@ -22,7 +22,8 @@
         </div>
         <div class="info-mid-block">
             <div class="share-line">
-                <div class="data-share-line"><p>{{$data}}</p></div>                
+                <div class="data-share-line"><p>{{$data}}</p></div> 
+                <p>{{signoName}}</p>               
                 <button class="btn-share-line"><img src="/img/share_icon.svg" alt=""></button>
             </div>
             <div class="ta-info-mid-block">
