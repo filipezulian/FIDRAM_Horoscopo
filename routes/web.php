@@ -15,6 +15,8 @@ use App\Http\Controllers\UserController;
 |
 */
 
+
+
 Route::get('/cadastrar', function () {
     return view('auth.cadastro');
 });
@@ -26,6 +28,8 @@ Route::controller(UserController::class)->group(function(){
 });
 
 Route::controller(ScrapperController::class)->group(function () {
-    Route::get('/home', 'scrapper')->name('home.logado');
+    Route::get('/home', 'scrapperDay')->name('home.logado');
     Route::get('/url', 'scrapeDaily')->name('daily');
+    Route::get('/mensal', 'scrapperMonth')->name('mensal');
+    Route::get('/semanal', 'scrapperWeek')->name('mensal');
 });
