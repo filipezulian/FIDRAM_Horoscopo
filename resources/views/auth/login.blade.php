@@ -22,12 +22,12 @@
             <input class="input-login-email" type="text" name="email" id='email'>
         </div>
         <div class="campos-login-bottom">
-            <label class="label-login" for="">Senha:</label>
+            <label class="label-login" for="">Password:</label>
             <input class="input-login-senha" type="password" name="password" id='password'>
         </div>
             <button class="btn-login" type="submit">Login</button>
         <div>
-            <a href="{{ route('cadastro') }}" class="fonte_cadastro">Caso não tenha uma conta, faça o cadastro aqui</a>
+            <a href="{{ route('cadastro') }}" class="fonte_cadastro">If you don't have an account, register here.</a>
         </div>
     </form>
     

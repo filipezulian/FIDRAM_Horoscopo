@@ -7,13 +7,13 @@
 <div class="login-mid-block">
     <form method="POST" action="{{route('cadastro')}}">
         @csrf
-        <h1 class="nav-text-lc">Cadastro</h1>
+        <h1 class="nav-text-lc">Register</h1>
             <div class="labels-cadastro">
-                <label for="">Nome:</label>
+                <label for="">Name:</label>
                 <label for="">E-mail:</label>
                 <label for="">CPF:</label>
-                <label for="">Senha:</label>
-                <label for="">Data de Nascimento:</label>
+                <label for="">Password:</label>
+                <label for="">Date of Birth:</label>
             </div>
             <div class="info-cadastro">
                 <input type="text" name="name" id='name'>
@@ -23,10 +23,10 @@
                 <input type="date" name="nascimento" id='nascimento'>
             </div>
             <div class="btn-cadastro">
-                <button type="submit">Cadastrar</button>
+                <button type="submit">Register</button>
             </div>   
         </form>   
-    <a href="{{ url('') }}" class="fonte_cadastro">Caso já tenha uma conta, faça o login aqui</a> 
+    <a href="{{ url('') }}" class="fonte_cadastro">If you already have an account, log in here.</a> 
 </div>
 
 

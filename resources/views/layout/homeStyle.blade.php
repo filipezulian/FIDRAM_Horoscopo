@@ -24,7 +24,7 @@
                 <img src="/img/faceSVG.svg" alt="icone rosto">          
             </div>            
             <div class="nav-item-logout">
-                <button class="btn-nav-logout"><img src="/img/logout.svg" alt="icone logout"></button>
+                <button class="btn-nav-logout"><a href="{{url('')}}"><img src="/img/logout.svg" alt="icone logout"></a></button>
             </div>
         </div>
         

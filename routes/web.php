@@ -31,5 +31,6 @@ Route::controller(ScrapperController::class)->group(function () {
     Route::get('/home', 'scrapperDay')->name('home.logado');
     Route::get('/url', 'scrapeDaily')->name('daily');
     Route::get('/mensal', 'scrapperMonth')->name('mensal');
-    Route::get('/semanal', 'scrapperWeek')->name('mensal');
+    Route::get('/semanal', 'scrapperWeek')->name('semanal');
+    Route::get('/anual', 'scrapperYear')->name('anual');
 });

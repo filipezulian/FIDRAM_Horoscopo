@@ -106,6 +106,7 @@ h1 {
 .campos-login-bottom {
   display: flex;
   width: 100%;
+  padding-right: 2.7em;
   border-radius: 20px;
   align-self: center;
   justify-content: center;
@@ -148,7 +149,7 @@ label {
 
 .input-login-senha {
   display: flex;
-  width: 50%;
+  width: 52%;
   align-self: center;
   box-shadow: 2px 2px 2px 2px black;
   justify-content: center;
@@ -227,6 +228,15 @@ label {
 }
 
 .nav-item-mid-block button {
+  background-color: rgb(191, 200, 232);
+  height: inherit;
+  width: inherit;
+  border: none;
+  border-radius: 20px;
+  font-size: 30px;
+}
+
+.nav-item-mid-block a {
   background-color: rgb(191, 200, 232);
   height: inherit;
   width: inherit;
@@ -324,29 +334,36 @@ textarea {
   resize: none;
 }
 
-.data-share-line{
-  position: absolute;
-  display: flex;
-  justify-content: left;
-  font-size: 2em;
-  margin: 1% 0 0 3%;  
-  font-family: "Comic Sans MS";
-}
-
 .share-line {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
   position: absolute;
   top: 0;
   width: 100%;
   height: 10%;
   background: rgb(191, 194, 232);
   border-radius: 20px;
-  
+}
+
+.data-share-line {
+  display: flex;
+  justify-content: center;
+  font-size: 2em;
+  margin: 1% 0 0 3%;
+  font-family: "Comic Sans MS";
+}
+
+.signo-share-line {
+  display: flex;
+  justify-content: center;
+  font-size: 2em;
+  margin: 1% 0;
+  font-family: "Comic Sans MS";
 }
 
 .btn-share-line {  
   display: flex;
-
-  float: right;
   margin: 1% 2% 0 0;
   border: none;
   background: rgba(0, 0, 0, 0);
@@ -398,4 +415,24 @@ header {
   font-weight: 0;
   color: #fafafa;
   font-family: "Comic Sans MS";
+}
+
+/* Estilo da barra de rolagem */
+::-webkit-scrollbar {
+  margin-right: 20px;
+  width: 25px; /* Largura da barra de rolagem */
+  border-radius: 20px; /* Raio da borda da barra de rolagem */
+}
+
+/* Estilo do polegar da rolagem */
+::-webkit-scrollbar-thumb {
+  background-color: rgb(191, 200, 232); /* Cor do polegar */
+  border: 3px solid rgb(135, 154, 192); /* Borda do polegar */
+  border-radius: 20px; /* Raio da borda do polegar */
+}
+
+/* Estilo da pista da rolagem (opcional) */
+::-webkit-scrollbar-track {
+  background-color: rgb(11, 12, 39); /* Cor da pista */
+  border-radius: 20px; /* Raio da borda da pista */
 }
