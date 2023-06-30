@@ -436,3 +436,81 @@ header {
   background-color: rgb(11, 12, 39); /* Cor da pista */
   border-radius: 20px; /* Raio da borda da pista */
 }
+
+dialog::backdrop{
+  background-color: rgba(221, 221, 221, 0.15)
+}
+
+dialog{  
+  background-color: rgb(11, 12, 39);
+  margin: 12.6% 23%;
+  width: 70em;
+  height: 35em;
+  border-radius: 20px;
+}
+
+.headModal{
+  display: flex; 
+  padding-left: 27px; 
+  justify-content: space-between;
+  align-items: center;
+  color: #fafafa;
+}
+
+.headModal img{
+  margin-bottom: 12px;
+}
+
+.img-print{
+  background: green;
+  height: 40%;
+}
+
+.url-print{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: yellow;
+  height: 20%;
+}
+
+.url-print input{
+  width: 60%;
+  height: 3em;
+  font-family: "Comic Sans MS";
+  padding: 1em;
+  font-size: 1.2em;
+  margin-right: 2em;
+  border: none;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.url-print input[type="text"] {
+  outline: none;
+}
+
+.url-print button {
+  position: absolute;
+  margin-left: 30em;
+  width: 20%;
+  height: 3em;
+  border: none;
+  font-family: "Comic Sans MS";
+  padding: 1em;
+  font-size: 1.2em;
+  border-radius: 20px;
+  background: rgb(164, 183, 220);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.share-icons{
+  display: flex;
+  padding: 0 6em;
+  justify-content: space-between;
+  align-items: center;
+  background: red;
+  height: 25%;
+}

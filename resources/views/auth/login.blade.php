@@ -13,7 +13,7 @@
 
         @error('error')
         <div class="msg_erro_login_div">
-            <span class="msg_erro_login">{{ $message }}</span>
+            <span class="msg_erro_login">{{$message}}</span>
         </div>
         @enderror
         
