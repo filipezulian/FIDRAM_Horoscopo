@@ -464,6 +464,15 @@ dialog{
 .img-print{
   background: green;
   height: 40%;
+  padding: 5.8em 22.5em;
+}
+
+.img-print span{
+  border: rgb(191, 200, 232) 6px solid;
+  padding: 5.5em 8em;  
+  border-radius: 20px;
+  align-items: center;
+  justify-content: center;
 }
 
 .url-print{

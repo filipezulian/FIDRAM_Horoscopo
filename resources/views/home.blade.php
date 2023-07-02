@@ -4,11 +4,17 @@
 
 @section('content')
 
+<style media="print">
+  @page {
+    size: landscape; 
+  }
+</style>
+
 <body>
     <div class="mid-block">
         <div class="nav-mid-block">
             <nav class="nav-item-mid-block">
-                <a><button>Day</button></a>
+                <a><button style="text-decoration: underline;">Day</button></a>
             </nav>
             <nav class="nav-item-mid-block">
                 <a href="{{ url('semanal') }}"><button>Week</button></a>
@@ -55,7 +61,7 @@
             <button class="btn-share-line" id="closeModal"><img src="/img/x_icon.svg" alt=""></button>
         </div>
         <div class="img-print">
-            <p>Imagem Aqui</p>
+            <span>Imagem Aqui</span>
         </div>
         <div class="url-print">
             <input type="text" id="urlPagina" value="{{$urlAtual}}" readonly>
@@ -64,25 +70,40 @@
         <div class="share-icons">
             <a href=""><img src="/img/whatsApp_icon.png" alt="WhatsApp Icon" style="height: 5em; width: 5em; border-radius: 20px;"></a>
             <a href=""><img src="/img/google_drive_icon.png" alt="Google Drive Icon" style="height: 5em; width: 5em; border-radius: 20px;"></a>
-            <a href=""><img src="/img/download_icon.svg" alt="Download Icon" style="height: 5em; width: 5em; border-radius: 20px;"></a>
+            <a href="" onclick="pressEscAndPrint()"><img src="/img/download_icon.svg" alt="Download Icon" style="height: 5em; width: 5em; border-radius: 20px;"></a>
         </div>
     </dialog>
 
     <script>
         document.getElementById("copyButton").addEventListener("click", function() {
-        var input = document.getElementById("urlPagina");
-        input.select();
-        document.execCommand("copy");
+            var input = document.getElementById("urlPagina");
+            input.select();
+            document.execCommand("copy");
 
-        var copyButton = document.getElementById("copyButton");
-        copyButton.textContent = "Copied";
+            var copyButton = document.getElementById("copyButton");
+            copyButton.textContent = "Copied";
 
-        setTimeout(function() {
-            copyButton.textContent = "Copy Link";
-        }, 6000); // Tempo em milissegundos (6 segundos = 6000ms)
+            setTimeout(function() {
+                copyButton.textContent = "Copy Link";
+            }, 6000); //(6 segundos = 6000ms)
         });
     </script>
 
+    <script>
+        function pressEscAndPrint() {
+
+            var dialog = document.getElementById("modal");
+            dialog.close();
+
+            var style = document.createElement('style');
+            style.setAttribute('media', 'print');
+            style.innerHTML = '@page { size: landscape; }'; // Define a orientação da página para horizontal
+            document.head.appendChild(style);
+
+            // Executar a função window.print()
+            window.print();
+        }
+    </script>
 
 
     <script>

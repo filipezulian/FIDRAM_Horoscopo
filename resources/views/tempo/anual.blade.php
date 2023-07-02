@@ -17,7 +17,7 @@
                 <a href="{{ url('mensal') }}"><button>Month</button></a>
             </nav>
             <nav class="nav-item-mid-block">
-                <a><button>Year</button></a>
+                <a><button style="text-decoration: underline;">Year</button></a>
             </nav>
         </div>
         <div class="info-mid-block">

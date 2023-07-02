@@ -14,7 +14,7 @@
                 <a href="{{ url('semanal') }}"><button>Week</button></a>
             </nav>
             <nav class="nav-item-mid-block">
-                <a><button>Month</button></a>
+                <a><button style="text-decoration: underline;">Month</button></a>
             </nav>
             <nav class="nav-item-mid-block">
                 <a href="{{ url('anual') }}"><button>Year</button></a>
