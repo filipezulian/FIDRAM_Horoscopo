@@ -31,8 +31,8 @@ class ScrapperController extends Controller
 
         $crawler = new Crawler($html);
         $paragrafoSemData = $crawler->filter('div.main-horoscope > p')->text();
-        $data = substr($paragrafoSemData, 0, 13);
-        $paragraphText = wordwrap(substr($paragrafoSemData, 15), 100, "\n", true);
+        $data = substr($paragrafoSemData, 0, 11);
+        $paragraphText = wordwrap(substr($paragrafoSemData, 14), 100, "\n", true);
 
         //CAREER INFO
         $urlCarrer = 'https://www.horoscope.com/us/horoscopes/career/horoscope-career-daily-today.aspx?sign=' . $user_id;
@@ -43,7 +43,7 @@ class ScrapperController extends Controller
 
         $crawlerCarrer = new Crawler($htmlCareer);
         $paragrafoCarrerComData = $crawlerCarrer->filter('div.main-horoscope > p')->text();
-        $paragraphTextCarrer = wordwrap(substr($paragrafoCarrerComData, 15), 100, "\n", true);
+        $paragraphTextCarrer = wordwrap(substr($paragrafoCarrerComData, 14), 100, "\n", true);
 
         //HEALTH INFO
         $urlHealth = 'https://www.horoscope.com/us/horoscopes/wellness/horoscope-wellness-daily-today.aspx?sign=' . $user_id;
@@ -54,7 +54,7 @@ class ScrapperController extends Controller
 
         $crawlerHealth = new Crawler($htmlHealth);
         $paragrafoHealthComData = $crawlerHealth->filter('div.main-horoscope > p')->text();
-        $paragraphTextHealth = wordwrap(substr($paragrafoHealthComData, 15), 100, "\n", true);
+        $paragraphTextHealth = wordwrap(substr($paragrafoHealthComData, 14), 100, "\n", true);
 
 
         return view('home', compact('user', 'paragraphText', 'data', 'paragraphTextCarrer', 'paragraphTextHealth', 'name_signo'));
@@ -81,8 +81,8 @@ class ScrapperController extends Controller
 
         $crawler = new Crawler($html);
         $paragrafoSemData = $crawler->filter('div.main-horoscope > p')->text();
-        $data = substr($paragrafoSemData, 0, 30);
-        $paragraphText = substr($paragrafoSemData, 32);
+        $data = substr($paragrafoSemData, 0, 28);
+        $paragraphText = substr($paragrafoSemData, 30);
 
         return view('tempo.semanal', compact('user', 'paragraphText', 'data', 'name_signo'));
     }

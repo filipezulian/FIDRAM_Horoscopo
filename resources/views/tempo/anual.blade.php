@@ -53,7 +53,7 @@
             <button class="btn-share-line" id="closeModal"><img src="/img/x_icon.svg" alt=""></button>
         </div>
         <div class="img-print">
-            <img src="/img/cap_day.png" style="height: 11em; width: 22em; border-radius: 20px;">
+            <img src="/img/cap_anual.png" style="height: 11em; width: 22em; border-radius: 20px;">
         </div>
         <div class="url-print">
             <input type="text" id="urlPagina" value="{{$urlAtual}}" readonly>
