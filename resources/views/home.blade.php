@@ -4,12 +4,6 @@
 
 @section('content')
 
-<style media="print">
-  @page {
-    size: landscape; 
-  }
-</style>
-
 <body>
     <div class="mid-block">
         <div class="nav-mid-block">
@@ -28,7 +22,7 @@
         </div>
         <div class="info-mid-block">
             <div class="share-line">
-                <div class="data-share-line">
+                <div class="data-share-line" style="background: red;">
                     <p>{{$data}}</p>
                 </div>
                 <div class="signo-share-line">
@@ -37,14 +31,14 @@
                 <button class="btn-share-line" id="openModal"><img src="/img/share_icon.svg" alt=""></button>
             </div>
             <div class="ta-info-mid-block">
-                <textarea class="input-dados-dia" style="resize: none" readonly>{{$paragraphText}}</textarea>
-                <div>
-                    <img src="/img/home.svg" class="icone-casa" alt="casa">
-                    <textarea class="input-dados-domestico" style="resize: none" readonly>{{$paragraphTextCarrer}}</textarea>
+                <div id="scrollable" class="input-dados-dia" contenteditable="false">{{$paragraphText}}</div>
+                <div class="domestico">
+                    <img src="/img/home.svg" class="icone-especifico" alt="casa">
+                    <div id="scrollable" class="input-dados-especifo" contenteditable="false">{{$paragraphTextCarrer}}</div>
                 </div>
-                <div>
-                    <img src="/img/food.svg" class="icone-comida" alt="casa">
-                    <textarea class="input-dados-alimentar" style="resize: none" readonly>{{$paragraphTextHealth}}</textarea>
+                <div class="casa">
+                    <img src="/img/food.svg" class="icone-especifico" alt="casa">
+                    <div id="scrollable" class="input-dados-especifo" contenteditable="false">{{$paragraphTextHealth}}</div>
                 </div>
             </div>
         </div>
@@ -61,18 +55,44 @@
             <button class="btn-share-line" id="closeModal"><img src="/img/x_icon.svg" alt=""></button>
         </div>
         <div class="img-print">
-            <span>Imagem Aqui</span>
+            <img src="/img/cap_day.png" style="height: 11em; width: 22em; border-radius: 20px;">
         </div>
         <div class="url-print">
             <input type="text" id="urlPagina" value="{{$urlAtual}}" readonly>
             <button id="copyButton">Copy Link</button>
         </div>
         <div class="share-icons">
-            <a href=""><img src="/img/whatsApp_icon.png" alt="WhatsApp Icon" style="height: 5em; width: 5em; border-radius: 20px;"></a>
-            <a href=""><img src="/img/google_drive_icon.png" alt="Google Drive Icon" style="height: 5em; width: 5em; border-radius: 20px;"></a>
-            <a href="" onclick="pressEscAndPrint()"><img src="/img/download_icon.svg" alt="Download Icon" style="height: 5em; width: 5em; border-radius: 20px;"></a>
+            <a onclick="pressEscAndPrint()" style="cursor: pointer;"><img src="/img/pdf_icon.png" alt="PDF Icon" style="height: 5em; width: 5em; border-radius: 20px;"></a>
+            <a id="downloadButton" style="cursor: pointer;"><img src="/img/download_icon.svg" alt="Download Icon" style="height: 5em; width: 5em; border-radius: 20px;"></a>
         </div>
     </dialog>
+
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script>
+        const downloadButton = document.querySelector("#downloadButton");
+        downloadButton.addEventListener("click", function() {
+            // Selecionar o elemento que deseja capturar
+            var elementToCapture = document.querySelector('.mid-block');
+
+            // Adicionar quebra de linha no conteúdo do textarea
+            var textAreas = elementToCapture.querySelectorAll('textarea');
+            textAreas.forEach(function(textArea) {
+                textArea.value = textArea.value.replace(/\n/g, '\r\n'); // Adicionar a quebra de linha no formato '\r\n'
+            });
+
+            html2canvas(elementToCapture).then(function(canvas) {
+                // Converter a captura para imagem
+                var screenshot = canvas.toDataURL("image/png");
+
+                // Criar um link para download da imagem
+                var link = document.createElement('a');
+                link.href = screenshot;
+                link.download = 'captura.png';
+                link.click();
+            });
+        });
+    </script>
+
 
     <script>
         document.getElementById("copyButton").addEventListener("click", function() {
@@ -97,13 +117,14 @@
 
             var style = document.createElement('style');
             style.setAttribute('media', 'print');
-            style.innerHTML = '@page { size: landscape; }'; // Define a orientação da página para horizontal
+            style.innerHTML = '@page { size: landscape; margin: 0 auto; }'; // Define a orientação da página para horizontal e centraliza o conteúdo
             document.head.appendChild(style);
 
             // Executar a função window.print()
             window.print();
         }
     </script>
+
 
 
     <script>

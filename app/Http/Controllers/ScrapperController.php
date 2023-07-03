@@ -23,10 +23,8 @@ class ScrapperController extends Controller
             ->value('signo.nome');
 
         //MAIN INFO
-        $url = 'https://www.horoscope.com/us/horoscopes/general/horoscope-general-daily-today.aspx?sign=' . $user_id; // The URL you want to scrape
-        $client = new Client([
-            'verify' => 'cc/cacert.pem'
-        ]);
+        $url = 'https://www.horoscope.com/us/horoscopes/general/horoscope-general-daily-today.aspx?sign=' . $user_id;
+        $client = new Client(['verify' => 'cc/cacert.pem']);
         $response = $client->get($url);
 
         $html = (string) $response->getBody();
@@ -34,33 +32,29 @@ class ScrapperController extends Controller
         $crawler = new Crawler($html);
         $paragrafoSemData = $crawler->filter('div.main-horoscope > p')->text();
         $data = substr($paragrafoSemData, 0, 13);
-        $paragraphText = substr($paragrafoSemData, 15);
+        $paragraphText = wordwrap(substr($paragrafoSemData, 15), 100, "\n", true);
 
         //CAREER INFO
-        $urlCarrer = 'https://www.horoscope.com/us/horoscopes/career/horoscope-career-daily-today.aspx?sign=' . $user_id; // The URL you want to scrape
-        $client = new Client([
-            'verify' => 'cc/cacert.pem'
-        ]);
+        $urlCarrer = 'https://www.horoscope.com/us/horoscopes/career/horoscope-career-daily-today.aspx?sign=' . $user_id;
+        $client = new Client(['verify' => 'cc/cacert.pem']);
         $responseCareer = $client->get($urlCarrer);
 
         $htmlCareer = (string) $responseCareer->getBody();
 
         $crawlerCarrer = new Crawler($htmlCareer);
         $paragrafoCarrerComData = $crawlerCarrer->filter('div.main-horoscope > p')->text();
-        $paragraphTextCarrer = substr($paragrafoCarrerComData, 15);
+        $paragraphTextCarrer = wordwrap(substr($paragrafoCarrerComData, 15), 100, "\n", true);
 
         //HEALTH INFO
-        $urlHealth = 'https://www.horoscope.com/us/horoscopes/wellness/horoscope-wellness-daily-today.aspx?sign=' . $user_id; // The URL you want to scrape
-        $client = new Client([
-            'verify' => 'cc/cacert.pem'
-        ]);
+        $urlHealth = 'https://www.horoscope.com/us/horoscopes/wellness/horoscope-wellness-daily-today.aspx?sign=' . $user_id;
+        $client = new Client(['verify' => 'cc/cacert.pem']);
         $responseHealth = $client->get($urlHealth);
 
         $htmlHealth = (string) $responseHealth->getBody();
 
         $crawlerHealth = new Crawler($htmlHealth);
         $paragrafoHealthComData = $crawlerHealth->filter('div.main-horoscope > p')->text();
-        $paragraphTextHealth = substr($paragrafoHealthComData, 15);
+        $paragraphTextHealth = wordwrap(substr($paragrafoHealthComData, 15), 100, "\n", true);
 
 
         return view('home', compact('user', 'paragraphText', 'data', 'paragraphTextCarrer', 'paragraphTextHealth', 'name_signo'));
@@ -100,8 +94,8 @@ class ScrapperController extends Controller
         $user_id = Auth()->User()->id_signo;
 
         $name_signo = DB::table('signo')
-        ->where('signo.id', $user_id)
-        ->value('signo.nome');
+            ->where('signo.id', $user_id)
+            ->value('signo.nome');
 
         $url = 'https://www.horoscope.com/us/horoscopes/general/horoscope-general-monthly.aspx?sign=' . $user_id; // The URL you want to scrape
 
@@ -130,8 +124,8 @@ class ScrapperController extends Controller
         $ano_atual = date('Y');
 
         $name_signo = DB::table('signo')
-        ->where('signo.id', $user_id)
-        ->value('signo.nome');
+            ->where('signo.id', $user_id)
+            ->value('signo.nome');
 
         $url = 'https://www.horoscope.com/us/horoscopes/yearly/' . $ano_atual . '-horoscope-' . $name_signo . '.aspx'; // The URL you want to scrape
 
@@ -150,4 +144,5 @@ class ScrapperController extends Controller
 
         return view('tempo.anual', compact('user', 'paragrafoSemData', 'ano_atual', 'signo', 'name_signo'));
     }
+
 }
