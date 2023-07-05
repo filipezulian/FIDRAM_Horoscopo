@@ -1,39 +1,535 @@
 html {
-    font-size: 16px;
-    color: #2b2b2b;
+  font-size: 16px;
+  color: #2b2b2b;
 }
 
 body {
-    margin: 0;
-    width: 100%;
-    min-height: 90vh;
-    background-color: #fafafa;
+  background: url('/img/background_space.jpg');
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 
+
+
+.labels-cadastro {
+  display: grid;
+  width: 25%;
+  float: left;
+  justify-items: right;
+  
+}
+
+.labels-cadastro label {
+  margin-top: 1em;
+  
+}
+
+.info-cadastro input{
+  margin-top: 0.75em;
+  height: 1em;
+  border-radius: 20px;
+  box-shadow: 2px 2px 2px 2px black;
+  padding: 1em;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.info-cadastro input:focus {
+  outline: none;
+}
+
+.info-cadastro {
+  float: left;
+  display: grid;
+  width: 64%;
+  margin: 0 1em 0 1em;
+  outline: none;
+}
+
+.btn-cadastro{
+  display: grid;
+  margin: 3em 4em 6.5em 0 ;
+  width: 90%;
+  float:right;
+  justify-content: right;
+
+}
+
+.btn-cadastro button{
+  padding: 1.5em 3em;
+  border-radius: 20px;
+  border: rgb(77, 96, 156) solid 4px;
+  background: rgb(218, 223, 241);
+  
+  font-family: "Comic Sans MS";
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+.login-mid-block {
+  display: grid;
+  margin: 4% 19%;
+  background: rgb(135, 154, 192);
+  width: 80em;
+  height: 45em;
+  border-radius: 20px;
+}
+
+h1 {
+  display: flex;
+  width: 100%;
+  height: 2em;
+  padding-top: 0.3em;
+  border-radius: 20px;
+  background-color: rgb(11, 12, 39);
+  border-top: rgb(11, 12, 39) solid 5px ;
+  border-bottom: rgb(77, 96, 156) solid 5px ;
+  align-self: center;
+  color: aliceblue;
+  justify-content: center;
+  border-radius: 20px;
+}
+
+.campos-login-top {
+  display: flex;
+  width: 100%;
+  border-radius: 20px;
+  align-self: center;
+  justify-content: center;
+}
+
+.campos-login-bottom {
+  display: flex;
+  width: 100%;
+  padding-right: 2.7em;
+  border-radius: 20px;
+  align-self: center;
+  justify-content: center;
+}
+
+.label-login {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  height: 3em;
+  margin: 3em 0.5em 1em 0;
+}
+
+label {
+  font-size: 1.7em;
+  font-family: "Comic Sans MS";
+}
+
+.input-login-email {
+  display: flex;
+  width: 50%;
+  align-self: center;  
+  box-shadow: 2px 2px 2px 2px black;
+  justify-content: center;
+  height: 3em;
+  margin: 1em 0 0 0;
+  border-radius: 20px;
+  padding: 1em;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.input-login-email:focus {
+  outline: none;
+}
+
+.input-login-senha:focus {
+  outline: none;
+}
+
+.input-login-senha {
+  display: flex;
+  width: 52%;
+  align-self: center;
+  box-shadow: 2px 2px 2px 2px black;
+  justify-content: center;
+  height: 3em;
+  margin: 1em 0 0 0;
+  border-radius: 20px;
+  padding: 1em;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.btn-login {
+  margin: 2em 1px 3.5em 50em;
+  align-self: center;
+  justify-content: center;
+  height: 5em;
+  width: 10em;
+  border-radius: 20px;
+  border: rgb(77, 96, 156) solid 4px;
+  background: rgb(218, 223, 241);
+  font-family: "Comic Sans MS";
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+.btn-login:hover {
+  margin: 2em 1px 3.5em 50em;
+  align-self: center;
+  justify-content: center;
+  height: 5em;
+  width: 10em;
+  border-radius: 20px;
+  border: rgb(218, 223, 241) solid 4px;
+  background: rgb(77, 96, 156);
+  font-family: "Comic Sans MS";
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+.fonte_cadastro {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  background: rgb(96, 119, 198);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  font-size: 1.5em;
+  color: #2b2b2b;
+  font-family: "Comic Sans MS";
+}
+
+.mid-block {
+  display: flex;
+  margin: 4% 19%;
+  background: rgb(135, 154, 192);
+  width: 80em;
+  height: 45em;
+  border-radius: 20px;
+}
+
+.nav-mid-block {
+  display: flex;
+  flex-basis: 20%;
+  background: rgb(135, 154, 192);
+  border-radius: 20px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.nav-item-mid-block {
+  text-align: center;
+  margin: 2.5em 1.5em;
+  height: 6em;
+  width: 13em;  
+  font-family: "Comic Sans MS";
+}
+
+.nav-item-mid-block button {
+  background-color: rgb(191, 200, 232);
+  height: inherit;
+  width: inherit;
+  border: none;
+  border-radius: 20px;
+  font-size: 30px;
+}
+
+.nav-item-mid-block a {
+  background-color: rgb(191, 200, 232);
+  height: inherit;
+  width: inherit;
+  border: none;
+  border-radius: 20px;
+  font-size: 30px;
+}
+
+.nav-item-mid-block a {
+  text-decoration: none;
+  color: black;
+}
+
+.nav-item-mid-block button:hover {
+  background-color: rgb(191, 194, 232);
+  height: inherit;
+  width: inherit;
+  border: rgb(77, 96, 156) 5px solid;
+  border-radius: 20px;
+  font-size: 30px;
+}
+
+.info-mid-block {
+  position: relative;
+  display: grid;
+  width: 80%;
+  border-radius: 20px;
+}
+
+.ta-info-mid-block {
+  width: 100%;
+  height: 100%;
+  background: rgb(164, 183, 220);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+#scrollable {
+  overflow: auto;
+  max-height: 94%; /* Defina a altura máxima desejada para a div */
+}
+
+.input-dados-not-dia {
+  position: absolute;
+  background: white;  
+  padding: 1em 3em 1em 1em;
+  margin: 10% 3%;
+  width: 94%;
+  height: 81.5%;
+  border-radius: 20px;
+  border: none;
+  display: flex;
+  justify-content: flex;
+  font-size: 1.3em;
+}
+
+.input-dados-dia {
+  background: white;
+  position: absolute;
+  padding: 1em 3em 1em 1em;
+  margin: 10% 3%;
+  width: 94%;
+  height: 31%;
+  border-radius: 20px;
+  border: none;
+  display: flex;
+  justify-content: flex;  
+  font-size: 1.3em;
+}
+
+.icone-especifico {
+  display: block;
+  margin-left: 3em;
+}
+
+.domestico {
+  display: flex;
+  align-items: center;
+  margin-top: 25em;
+}
+
+.input-dados-especifo {
+  background: white;
+  float: right;
+  padding: 1em 2em 1em 1em;  
+  position: absolute;
+  margin: 0 3% 0 17%;
+  width: 80%;
+  justify-content: flex-end;
+  height: 9em;
+  border-radius: 20px;
+  border: none;
+}
+
+.casa {
+  display: flex;
+  align-items: center;
+  margin-top: 7.5em;
+}
+
+textarea {
+  padding: 3%;
+  word-wrap: break-word;
+  resize: none;
+}
+
+.share-line {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 10%;
+  background: rgb(191, 194, 232);
+  border-radius: 20px;
+}
+
+.data-share-line {
+  display: flex;
+  justify-content: center;
+  font-size: 2em;
+  margin: 1% 0 0 3%;
+  font-family: "Comic Sans MS";
+}
+
+.signo-share-line {
+  display: flex;
+  justify-content: center;
+  font-size: 2em;
+  margin: 1% 0;
+  font-family: "Comic Sans MS";
+}
+
+.btn-share-line {  
+  display: flex;
+  margin: 1% 2% 0 0;
+  border: none;
+  background: rgba(0, 0, 0, 0);
+}
+
+
 header {
-    top: 0;
-    left: 0;
-    display: flex;
-    flex-direction: row;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
 }
 
 .nav-bar {
-    width: 100%;
-    height: 10vh;
-    display: flex;
-    flex-direction: row;
-    background-color: #282330;
-    justify-content: left;
-    align-items: center;
+  width: 100%;
+  height: 10vh;
+  background-color: rgb(11, 12, 39);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.nav-item {
-    margin-left: 35px;
+.nav-item-text {
+  margin-left: 8em;
+  flex-grow: 1;
+  width: max-content;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-nav-logout {
+  margin-right: 3em;
+  background: rgba(0, 0, 0, 0);
+  border: none;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-text-lc{  
+  color: #fafafa;
+  font-family: "Comic Sans MS";
 }
 
 .nav-text {
-    text-decoration: none;
-    color: #fafafa;
-    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  text-decoration: none;
+  font-size: 5em;
+  text-transform: uppercase;
+  font-weight: 0;
+  color: #fafafa;
+  font-family: "Comic Sans MS";
+}
+
+/* Estilo da barra de rolagem */
+::-webkit-scrollbar {
+  margin-right: 20px;
+  width: 25px; /* Largura da barra de rolagem */
+  border-radius: 20px; /* Raio da borda da barra de rolagem */
+}
+
+/* Estilo do polegar da rolagem */
+::-webkit-scrollbar-thumb {
+  background-color: rgb(191, 200, 232); /* Cor do polegar */
+  border: 3px solid rgb(135, 154, 192); /* Borda do polegar */
+  border-radius: 20px; /* Raio da borda do polegar */
+}
+
+/* Estilo da pista da rolagem (opcional) */
+::-webkit-scrollbar-track {
+  background-color: rgb(11, 12, 39); /* Cor da pista */
+  border-radius: 20px; /* Raio da borda da pista */
+}
+
+dialog::backdrop{
+  background-color: rgba(221, 221, 221, 0.15)
+}
+
+dialog{  
+  background-color: rgb(11, 12, 39);
+  margin: 12.6% 23%;
+  width: 70em;
+  height: 35em;
+  border-radius: 20px;
+}
+
+.headModal{
+  display: flex; 
+  padding-left: 27px; 
+  justify-content: space-between;
+  align-items: center;
+  color: #fafafa;
+}
+
+.headModal img{
+  margin-bottom: 12px;
+}
+
+.img-print{
+  background: green;
+  height: 40%;
+  text-align: center;
+  justify-content: center;
+  padding-top: 1em;  
+}
+
+.img-print span{
+  border: rgb(191, 200, 232) 6px solid;
+  padding: 5.5em 8em;  
+  border-radius: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.url-print{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20%;
+}
+
+.url-print input{
+  width: 60%;
+  height: 3em;
+  font-family: "Comic Sans MS";
+  padding: 1em;
+  font-size: 1.2em;
+  margin-right: 2em;
+  border: none;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.url-print input[type="text"] {
+  outline: none;
+}
+
+.url-print button {
+  position: absolute;
+  margin-left: 30em;
+  width: 20%;
+  height: 3em;
+  border: none;
+  font-family: "Comic Sans MS";
+  padding: 1em;
+  font-size: 1.2em;
+  border-radius: 20px;
+  background: rgb(164, 183, 220);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.share-icons{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 25%;
+  padding: 0 15em 0 15em;
 }

@@ -1,14 +1,20 @@
 @extends('layout.homeStyle')
 
-@section('title', 'FIDRAM - Day')
+@section('title', 'FIDRAM - Year')
 
 @section('content')
+
+<style media="print">
+    @page {
+        size: landscape;
+    }
+</style>
 
 <body>
     <div class="mid-block">
         <div class="nav-mid-block">
             <nav class="nav-item-mid-block">
-                <a><button style="text-decoration: underline;">Day</button></a>
+                <a href="{{ url('home') }}"><button>Day</button></a>
             </nav>
             <nav class="nav-item-mid-block">
                 <a href="{{ url('semanal') }}"><button>Week</button></a>
@@ -17,13 +23,13 @@
                 <a href="{{ url('mensal') }}"><button>Month</button></a>
             </nav>
             <nav class="nav-item-mid-block">
-                <a href="{{ url('anual') }}"><button>Year</button></a>
+                <a><button style="text-decoration: underline;">Year</button></a>
             </nav>
         </div>
         <div class="info-mid-block">
             <div class="share-line">
                 <div class="data-share-line">
-                    <p>{{$data}}</p>
+                    <p>{{$ano_atual}}</p>
                 </div>
                 <div class="signo-share-line">
                     <p>{{$name_signo}}</p>
@@ -31,15 +37,7 @@
                 <button class="btn-share-line" id="openModal"><img src="/img/share_icon.svg" alt=""></button>
             </div>
             <div class="ta-info-mid-block">
-                <div id="scrollable" class="input-dados-dia" contenteditable="false">{{$paragraphText}}</div>
-                <div class="domestico">
-                    <img src="/img/home.svg" class="icone-especifico" alt="casa">
-                    <div id="scrollable" class="input-dados-especifo" contenteditable="false">{{$paragraphTextCarrer}}</div>
-                </div>
-                <div class="casa">
-                    <img src="/img/food.svg" class="icone-especifico" alt="casa">
-                    <div id="scrollable" class="input-dados-especifo" contenteditable="false">{{$paragraphTextHealth}}</div>
-                </div>
+                <div id="scrollable" class="input-dados-not-dia" contenteditable="false">{{$paragrafoSemData}}</div>
             </div>
         </div>
     </div>
@@ -55,7 +53,7 @@
             <button class="btn-share-line" id="closeModal"><img src="/img/x_icon.svg" alt=""></button>
         </div>
         <div class="img-print">
-            <img src="/img/cap_dia.png" style="height: 11em; width: 22em; border-radius: 20px;">
+            <img src="/img/cap_anual.png" style="height: 11em; width: 22em; border-radius: 20px;">
         </div>
         <div class="url-print">
             <input type="text" id="urlPagina" value="{{$urlAtual}}" readonly>
@@ -117,14 +115,13 @@
 
             var style = document.createElement('style');
             style.setAttribute('media', 'print');
-            style.innerHTML = '@page { size: landscape; margin: 0 auto; }'; // Define a orientação da página para horizontal e centraliza o conteúdo
+            style.innerHTML = '@page { size: landscape; }'; // Define a orientação da página para horizontal
             document.head.appendChild(style);
 
             // Executar a função window.print()
             window.print();
         }
     </script>
-
 
 
     <script>

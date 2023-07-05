@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('nome');
             $table->timestamps();
         });
-        
+
         DB::table('signo')->insert([
             ['nome' => 'Áries'],
             ['nome' => 'Touros'],
@@ -32,7 +32,6 @@ return new class extends Migration
             ['nome' => 'Aquário'],
             ['nome' => 'Peixes'],
         ]);
-
     }
 
     /**

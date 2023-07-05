@@ -19,16 +19,15 @@
 <body>
     <header>
         <div class="nav-bar">
-            <div class="nav-item">
-                <a class="nav-text" href="">Home</a>
-            </div>
-            <div class="nav-item">
-                <a class="nav-text" href="">Horoscopo diário</a>
-            </div>
-            <div class="nav-item">
-                <a class="nav-text" href="">eita papai</a>
+            <div class="nav-item-text">
+                <a class="nav-text" href="">Fidram</a>
+                <img src="/img/faceSVG.svg" alt="icone rosto">          
+            </div>            
+            <div class="nav-item-logout">
+                <button class="btn-nav-logout"><a href="{{url('')}}"><img src="/img/logout.svg" alt="icone logout"></a></button>
             </div>
         </div>
+        
     </header>
     @yield('content')
 </body>

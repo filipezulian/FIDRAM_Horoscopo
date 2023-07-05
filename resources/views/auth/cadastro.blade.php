@@ -4,31 +4,31 @@
 
 @section('content')
 
-<form method="POST" action="{{route('cadastro')}}">
-    @csrf
-    <p>Cadastro</p>
-    <div>
-        <label for="">Nome:</label>
-        <input type="text" name="name" id='name'>
-    </div>
-    <div>
-        <label for="">E-mail:</label>
-        <input type="text" name="email" id='email'>
-    </div>
-    <div>
-        <label for="">CPF:</label>
-        <input type="text" name="cpf" id="cpf">
-    </div>
-    <div>
-        <label for="">Senha:</label>
-        <input type="password" name="password" id='password'>
-    </div>
-    <div>
-        <label for="">Data de Nascimento:</label>
-        <input type="date" name="nascimento" id='nascimento'>
-    </div>
-    <button type="submit">Cadastrar</button>
-</form>
-<a href="{{ url('') }}" class="fonte_cadastro">Caso ja tenha uma conta, faça o login aqui</a>
+<div class="login-mid-block">
+    <form method="POST" action="{{route('cadastro')}}">
+        @csrf
+        <h1 class="nav-text-lc">Register</h1>
+            <div class="labels-cadastro">
+                <label for="">Name:</label>
+                <label for="">E-mail:</label>
+                <label for="">CPF:</label>
+                <label for="">Password:</label>
+                <label for="">Date of Birth:</label>
+            </div>
+            <div class="info-cadastro">
+                <input type="text" name="name" id='name'>
+                <input type="text" name="email" id='email'>
+                <input type="text" name="cpf" id="cpf">
+                <input type="password" name="password" id='password'>
+                <input type="date" name="nascimento" id='nascimento'>
+            </div>
+            <div class="btn-cadastro">
+                <button type="submit">Register</button>
+            </div>   
+        </form>   
+    <a href="{{ url('') }}" class="fonte_cadastro">If you already have an account, log in here.</a> 
+</div>
+
+
 
 @endsection
